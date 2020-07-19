@@ -9,7 +9,8 @@ const express    			 = require("express"),
 	  Campground 			 = require("./models/campground"),
 	  Comment 	 			 = require("./models/comment"),
 	  User					 = require("./models/user"),
-	  flash			 		 = require("connect-flash")
+	  flash			 		 = require("connect-flash"),
+	  port					 = 3000;
 
 const campgroundRoutes = require("./routes/campgrounds"),
 	  commentRoutes    = require("./routes/comments"),
@@ -59,9 +60,13 @@ app.use(commentRoutes);
 // app.use("campgrounds", campgroundRoutes);
 // app.use("campgrounds/:id/comments", commentRoutes);
 
-app.listen(3000, function() {
-	console.log('Server listening on port 3000')
-})
+// app.listen(3000, function() {
+// 	console.log('Server listening on port 3000')
+// })
+
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("The YelpCamp Server Has Started!");
+});
 
 // <%- include("partials/header") %>
 // <%- include("partials/footer") %>
