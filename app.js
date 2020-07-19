@@ -15,7 +15,9 @@ const campgroundRoutes = require("./routes/campgrounds"),
 	  commentRoutes    = require("./routes/comments"),
 	  indexRoutes	   = require("./routes/index")
 
-mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://tawfiq-developer:Toronto*2006337002@cluster0.fespk.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+
 app.use(bodyParser.urlencoded({extended:true}));
 
 // this makes us not use .ejs with the file name
