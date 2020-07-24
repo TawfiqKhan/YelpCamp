@@ -19,7 +19,6 @@ const campgroundRoutes = require("./routes/campgrounds"),
 // mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.connect("mongodb+srv://tawfiq-developer:Toronto*2006337002@cluster0.fespk.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
-console.log(process.env.DATABASEURL);
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
 var mongoFix = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.connect(url, mongoFix);
@@ -66,13 +65,13 @@ app.use(commentRoutes);
 // app.use("campgrounds", campgroundRoutes);
 // app.use("campgrounds/:id/comments", commentRoutes);
 
-app.listen(3000, function() {
-	console.log('Server listening on port 3000')
-})
+// app.listen(3000, function() {
+// 	console.log('Server listening on port 3000')
+// })
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//    console.log("The YelpCamp Server Has Started!");
-// });
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("The YelpCamp Server Has Started!");
+});
 
 // <%- include("partials/header") %>
 // <%- include("partials/footer") %>
