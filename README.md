@@ -1,5 +1,5 @@
 
-## About the Game
+## About the App
 
 The App was built using Bootstrap, node.js, express & mongoose. The app consists the following functionalities
 
